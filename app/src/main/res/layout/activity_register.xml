@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="registerView"
+            type="com.mamits.zini24user.viewmodel.activity.RegisterActivityViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mamits.zini24user.ui.customviews.CustomCircularImageView
+                android:id="@+id/img_logo"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/zini_logo"  />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/img_logo"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/h1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/signup"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_25ssp"
+                    app:fontName="Poppins-Bold.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="Use your mobile no. to continue."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:alpha="0.5"
+                    android:text="Full Name*"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@null"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/black" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:alpha="0.5"
+                    android:text="Mobile No.*"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomInputEditText
+                    android:id="@+id/et_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@null"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/black" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:alpha="0.5"
+                    android:text="Password*"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp">
+
+                    <com.mamits.zini24user.ui.customviews.CustomInputEditText
+                        android:id="@+id/et_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:inputType="numberPassword"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/black" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black">
+
+                        <com.mamits.zini24user.ui.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/signup"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontName="Poppins-Medium.ttf" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:text="@string/login"
+                    android:textColor="@color/color_orange"
+                    android:textSize="@dimen/_13ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

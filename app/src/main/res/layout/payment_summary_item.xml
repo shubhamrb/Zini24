@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/msg_body"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp">
+
+
+    <com.mamits.zini24user.ui.customviews.CustomTextView
+        android:id="@+id/txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/text_price"
+        android:text="Application Charge"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp" />
+
+    <com.mamits.zini24user.ui.customviews.CustomTextView
+        android:id="@+id/text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="₹ 2,499.36"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp" />
+</RelativeLayout>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffff</color>
+    <color name="black">#000000</color>
+    <color name="edit_text_back">#f5f5f5</color>
+    <color name="color_orange">#ff663e</color>
+    <color name="dim_white">#EEFFFFFF</color>
+    <color name="text_hint">#66000000</color>
+    <color name="divider">#4D707070</color>
+    <color name="tab_unselect">#9A686767</color>
+    <color name="tab_select">#444444</color>
+    <color name="green_39ae00">#39ae00</color>
+    <color name="yellow_ffb302">#ffb302</color>
+    <color name="red_ff2502">#ff2502</color>
+    <color name="purple_8000ff">#8000ff</color>
+    <color name="blue_006fff">#006fff</color>
+    <color name="placeholder">#BFC6D5</color>
+    <color name="pink_fff7f2">#fff7f2</color>
+    <color name="dark_pink_ffebdf">#ffebdf</color>
+    <color name="black_2a2a2a">#2a2a2a</color>
+    <color name="orange_ff9b44">#ff9b44</color>
+    <color name="blue_a5cfff">#a5cfff</color>
+    <color name="dim_blue_e6dfff">#e6dfff</color>
+</resources>

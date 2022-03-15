@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_200sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/order_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.mamits.zini24user.ui.customviews.CustomTextViewHtml
+            android:id="@+id/txt_offer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Get Upto 20% SSC Exams Forms"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <com.mamits.zini24user.ui.customviews.CustomTextView
+            android:id="@+id/txt_off_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="Min order 50. Maximum discount 20."
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Medium.ttf" />
+
+        <com.mamits.zini24user.ui.customviews.CustomTextView
+            android:id="@+id/txt_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/dash_border"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="SSCSUPER20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:fontName="Poppins-Regular.ttf"
+            app:textAllCaps="true" />
+    </LinearLayout>
+
+</RelativeLayout>

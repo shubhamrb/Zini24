@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:backgroundTint="@color/dim_blue_e6dfff"
+    app:cardCornerRadius="@dimen/_30sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_20sdp"
+        android:gravity="center_vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_img"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_80sdp"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/img_kiosk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+        </androidx.cardview.widget.CardView>
+
+        <com.mamits.zini24user.ui.customviews.CustomTextView
+            android:id="@+id/txt_kiosk_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_toEndOf="@id/card_img"
+            android:singleLine="true"
+            android:text="Radhe online kiosk"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:fontName="Poppins-Medium.ttf" />
+
+        <RelativeLayout
+            android:id="@+id/rl_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_kiosk_name"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_toEndOf="@id/card_img">
+
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/location" />
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:id="@+id/txt_dest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_toEndOf="@id/img_location"
+                android:singleLine="true"
+                android:text="1.5 km away from you"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:fontName="Poppins-Regular.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_location"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_toEndOf="@id/card_img">
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:id="@+id/txt_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="4.5"
+                android:textColor="@color/color_orange"
+                android:textSize="@dimen/_12ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+            <ImageView
+                android:id="@+id/img_rating"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_toEndOf="@id/txt_rating"
+                android:src="@drawable/star" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_rating"
+            android:layout_marginTop="@dimen/_20sdp">
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:id="@+id/txt_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Open now"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:fontName="Poppins-Regular.ttf" />
+
+            <View
+                android:id="@+id/img_status"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@id/txt_status"
+                android:background="@drawable/circle_green" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_assign"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/black"
+                app:cardCornerRadius="@dimen/_25sdp">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="Assign"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

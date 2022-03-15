@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:backgroundTint="@color/pink_fff7f2"
+    app:cardCornerRadius="@dimen/_30sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_20sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_2sdp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+            <ImageView
+                android:id="@+id/img_service_cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/_15sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toStartOf="@id/img_next"
+            android:layout_toEndOf="@id/card">
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+
+                android:id="@+id/txt_service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Government jobs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+            <com.mamits.zini24user.ui.customviews.CustomTextViewHtml
+                android:id="@+id/txt_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_service_name"
+                android:maxLines="2"
+                android:text="Apply for latest Government."
+                android:textColor="@color/black_2a2a2a"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_next"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_circle_black" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

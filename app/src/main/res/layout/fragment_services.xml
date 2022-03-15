@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="servicesFragmentView"
+            type="com.mamits.zini24user.viewmodel.fragment.ServicesFragmentViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dim_white"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp">
+
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@id/img"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toStartOf="@id/img"
+                android:orientation="vertical">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/txt_cat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Government jobs"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/txt_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Apply for latest Government jobs\nvacancies from here."
+                    android:textColor="@color/black_2a2a2a"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/dash_path_img" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_top"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="13"
+                tools:listitem="@layout/service_item_list" />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

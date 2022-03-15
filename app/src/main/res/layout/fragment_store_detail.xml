@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="storeDetailView"
+            type="com.mamits.zini24user.viewmodel.fragment.StoreDetailFragmentViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/fragmentDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dim_white"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rl_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:backgroundTint="@android:color/white"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    app:cardElevation="0dp">
+
+                    <com.mamits.zini24user.ui.customviews.AutoScrollViewPager
+                        android:id="@+id/viewpager_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_image"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:backgroundTint="@color/pink_fff7f2"
+                    app:cardCornerRadius="@dimen/_30sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_20sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mamits.zini24user.ui.customviews.CustomTextView
+                                android:id="@+id/txt_store_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@id/txt_status"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_15ssp"
+                                app:fontName="Poppins-Medium.ttf" />
+
+                            <com.mamits.zini24user.ui.customviews.CustomTextView
+                                android:id="@+id/txt_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@id/img_status"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontName="Poppins-Regular.ttf" />
+
+                            <View
+                                android:id="@+id/img_status"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_top">
+
+                            <ImageView
+                                android:id="@+id/img_location"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/location" />
+
+                            <com.mamits.zini24user.ui.customviews.CustomTextView
+                                android:id="@+id/txt_dest"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_toStartOf="@+id/btn_share"
+                                android:layout_toEndOf="@id/img_location"
+                                android:maxLines="2"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontName="Poppins-Regular.ttf" />
+
+                            <LinearLayout
+                                android:id="@+id/btn_share"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/button_grey"
+                                android:backgroundTint="@color/color_orange"
+                                android:gravity="center">
+
+                                <com.mamits.zini24user.ui.customviews.CustomTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    android:singleLine="true"
+                                    android:text="Share Profile"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontName="Poppins-Medium.ttf" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_22sdp"
+                                    android:layout_height="@dimen/_22sdp"
+                                    android:src="@drawable/ic_share" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <com.mamits.zini24user.ui.customviews.CustomTextViewHtml
+                            android:id="@+id/txt_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rl_location"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontName="Poppins-Regular.ttf" />
+
+                        <com.mamits.zini24user.ui.customviews.CustomTextView
+                            android:id="@+id/label_available"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_desc"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:text="Services available"
+                            android:textColor="@color/color_orange"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontName="Poppins-Medium.ttf" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView_sub_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/label_available"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/subcategory_item_list" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_middle"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:backgroundTint="@color/dim_blue_e6dfff"
+                    app:cardCornerRadius="@dimen/_30sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <com.mamits.zini24user.ui.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Ratings and Reviews"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp"
+                            app:fontName="Poppins-Medium.ttf" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_rating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp">
+
+                            <com.mamits.zini24user.ui.customviews.CustomTextView
+                                android:id="@+id/txt_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:singleLine="true"
+                                android:text="0"
+                                android:textColor="@color/color_orange"
+                                android:textSize="@dimen/_20ssp" />
+
+                            <RatingBar
+                                android:id="@+id/ratingbar_rating"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/txt_rating"
+                                android:isIndicator="true"
+                                android:max="5"
+                                android:rating="0"
+                                android:theme="@style/MyRatingBar" />
+
+
+                        </RelativeLayout>
+
+                        <com.mamits.zini24user.ui.customviews.CustomTextView
+                            android:id="@+id/txt_total_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text="0 Ratings"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontName="Poppins-Regular.ttf" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <com.ncorti.slidetoact.SlideToActView
+            android:id="@+id/btn_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_10sdp"
+            app:inner_color="@color/white"
+            app:outer_color="@color/black"
+            app:slider_icon="@drawable/train"
+            app:text="" />
+
+        <com.mamits.zini24user.ui.customviews.CustomTextView
+            android:id="@+id/text_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_slider"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Slide to proceed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:fontName="Poppins-Regular.ttf" />
+    </RelativeLayout>
+
+</layout>

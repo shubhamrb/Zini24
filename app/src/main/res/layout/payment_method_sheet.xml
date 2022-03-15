@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mamits.zini24user.ui.customviews.CustomTextView
+        android:id="@+id/txt_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_30sdp"
+        android:text="Pay ₹ 2,580.92 Using"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        app:fontName="Poppins-Bold.ttf" />
+
+    <RelativeLayout
+        android:id="@+id/btn_cashfree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_cashfree"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_2sdp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cashfree" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toStartOf="@id/img_next"
+            android:layout_toEndOf="@id/card_cashfree">
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:id="@+id/txt_service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cashfree"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_next"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_circle_orange" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_shop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+
+        <ImageView
+            android:id="@+id/img_cash"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_2sdp"
+            android:src="@drawable/cash" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toStartOf="@id/img_next1"
+            android:layout_toEndOf="@id/img_cash">
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pay at shop"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_next1"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_circle_orange" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_upi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_upi"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_2sdp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/upi" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toStartOf="@id/img_next2"
+            android:layout_toEndOf="@id/card_upi">
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPI"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_next2"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_circle_orange" />
+
+    </RelativeLayout>
+</LinearLayout>

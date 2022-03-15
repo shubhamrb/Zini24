@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_10sdp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:layout_margin="@dimen/_2sdp"
+        app:cardCornerRadius="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/img_sub_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/_15sdp"/>
+    </androidx.cardview.widget.CardView>
+
+    <com.mamits.zini24user.ui.customviews.CustomTextView
+        android:id="@+id/txt_sub_cat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="@dimen/_100sdp"
+        android:layout_below="@id/card"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="Railway"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        app:fontName="Poppins-Regular.ttf" />
+</RelativeLayout>

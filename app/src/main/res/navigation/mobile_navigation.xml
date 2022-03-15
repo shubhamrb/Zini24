@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.mamits.zini24user.ui.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_chat"
+        android:name="com.mamits.zini24user.ui.fragment.ChatFragment"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.mamits.zini24user.ui.fragment.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_nearby"
+        android:name="com.mamits.zini24user.ui.fragment.NearbyFragment"
+        tools:layout="@layout/fragment_nearby" />
+
+    <fragment
+        android:id="@+id/nav_offer"
+        android:name="com.mamits.zini24user.ui.fragment.OfferFragment"
+        tools:layout="@layout/fragment_offer" />
+
+    <fragment
+        android:id="@+id/nav_all_subcategory"
+        android:name="com.mamits.zini24user.ui.fragment.AllSubcategoryFragment"
+        tools:layout="@layout/fragment_all_subcategory" />
+
+    <fragment
+        android:id="@+id/nav_services"
+        android:name="com.mamits.zini24user.ui.fragment.ServicesFragment"
+        tools:layout="@layout/fragment_services" />
+
+    <fragment
+        android:id="@+id/nav_stores"
+        android:name="com.mamits.zini24user.ui.fragment.NearbyFragment"
+        tools:layout="@layout/fragment_nearby" />
+
+    <fragment
+        android:id="@+id/nav_store_detail"
+        android:name="com.mamits.zini24user.ui.fragment.StoreDetailFragment"
+        tools:layout="@layout/fragment_store_detail" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.mamits.zini24user.ui.fragment.NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/nav_form"
+        android:name="com.mamits.zini24user.ui.fragment.FormFragment"
+        tools:layout="@layout/fragment_form" />
+
+    <fragment
+        android:id="@+id/nav_instruction"
+        android:name="com.mamits.zini24user.ui.fragment.InstructionFragment"
+        tools:layout="@layout/fragment_instruction" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.mamits.zini24user.ui.fragment.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_payment_summary"
+        android:name="com.mamits.zini24user.ui.fragment.PaymentSummaryFragment"
+        tools:layout="@layout/fragment_payment_summary" />
+
+    <fragment
+        android:id="@+id/nav_payment_detail"
+        android:name="com.mamits.zini24user.ui.fragment.PaymentDetailFragment"
+        tools:layout="@layout/fragment_payment_detail" />
+
+    <fragment
+        android:id="@+id/nav_change_pass"
+        android:name="com.mamits.zini24user.ui.fragment.ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/nav_update_profile"
+        android:name="com.mamits.zini24user.ui.fragment.UpdateProfileFragment"
+        tools:layout="@layout/fragment_update_profile" />
+</navigation>

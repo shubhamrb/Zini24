@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeFragmentView"
+            type="com.mamits.zini24user.viewmodel.fragment.HomeFragmentViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dim_white"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp">
+
+            <com.mamits.zini24user.ui.customviews.AutoScrollViewPager
+                android:id="@+id/viewpager_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp" />
+
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewpager_banner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:dotsColor="@color/yellow_ffb302"
+                app:dotsCornerRadius="2.5dp"
+                app:dotsSize="@dimen/_5sdp"
+                app:dotsSpacing="@dimen/_2sdp"
+                app:dotsWidthFactor="2.5"
+                app:progressMode="false"
+                app:selectedDotColor="@color/color_orange" />
+
+            <LinearLayout
+                android:id="@+id/ll_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dots_indicator"
+                android:orientation="vertical">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/label_apply_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Apply online"
+                    android:textColor="@color/color_orange"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All categories available for you..."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btn_view_all_cat"
+                android:layout_below="@id/dots_indicator"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/dash_path_img" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_view_all_cat"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignBottom="@id/ll_heading"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/black"
+                app:cardCornerRadius="@dimen/_25sdp">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="View all"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_heading"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/category_item_list" />
+
+            <include
+                android:id="@+id/service_layout"
+                layout="@layout/services_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerView_category"
+                android:layout_marginTop="@dimen/_20sdp"
+                bind:homeFragmentView="@{homeFragmentView}" />
+
+            <com.mamits.zini24user.ui.customviews.CustomTextView
+                android:id="@+id/label_top_kiosk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_layout"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Top Vendor"
+                android:textColor="@color/color_orange"
+                android:textSize="@dimen/_16ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_view_all_top_kiosk"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_below="@id/service_layout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:backgroundTint="@color/black"
+                app:cardCornerRadius="@dimen/_25sdp">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="View all"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_top_kiosk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_top_kiosk"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/kiosk_item_list" />
+
+            <com.mamits.zini24user.ui.customviews.AutoScrollViewPager
+                android:id="@+id/bottom_viewpager_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_below="@+id/recyclerView_top_kiosk"
+                android:layout_marginTop="@dimen/_20sdp" />
+
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/bottom_dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bottom_viewpager_banner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:dotsColor="@color/yellow_ffb302"
+                app:dotsCornerRadius="2.5dp"
+                app:dotsSize="@dimen/_5sdp"
+                app:dotsSpacing="@dimen/_2sdp"
+                app:dotsWidthFactor="2.5"
+                app:progressMode="false"
+                app:selectedDotColor="@color/color_orange" />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

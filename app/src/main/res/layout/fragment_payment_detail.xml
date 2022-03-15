@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="paymentDetailView"
+            type="com.mamits.zini24user.viewmodel.fragment.PaymentDetailViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragmentDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dim_white"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_100sdp">
+
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/img"
+                android:orientation="vertical">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/txt_method_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Upi Pay"
+                    android:textColor="@color/color_orange"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/txt_method_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Scan the QR Code to make payment."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/dash_path_img" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_top"
+                android:orientation="vertical">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/text_store_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_45sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:text="KIOSK STORE"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <ImageView
+                    android:id="@+id/image_qr_code"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/quantum_grey" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/text_instruction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:text="Scan to make payment."
+                    android:textColor="@color/black"
+                    app:fontName="Poppins-Regular.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/text_instr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_25sdp"
+                    android:gravity="center"
+                    android:text="Once payment is done kindly share it with\nthe kiosk on chat section."
+                    android:textColor="@color/black"
+                    app:fontName="Poppins-Regular.ttf" />
+
+                <LinearLayout
+                    android:id="@+id/ll_share_screenshot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="@color/color_orange"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:id="@+id/text_share_screenshot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_15sdp"
+                        android:text="Share Screenshot"
+                        android:textColor="@color/white"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

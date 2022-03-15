@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="updateProfileView"
+            type="com.mamits.zini24user.viewmodel.fragment.ProfileFragmentViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/fragmentDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dim_white"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:id="@+id/ll_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/img"
+                    android:orientation="vertical">
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:id="@+id/label_top_kiosk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="Update Profile"
+                        android:textColor="@color/color_orange"
+                        android:textSize="@dimen/_16ssp"
+                        app:fontName="Poppins-Medium.ttf" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/dash_path_img" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img"
+                    android:orientation="vertical">
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.5"
+                        android:text="Full Name*"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomInputEditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@null"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/black" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:alpha="0.5"
+                        android:text="Email*"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomInputEditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@null"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/black" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:alpha="0.5"
+                        android:text="Number*"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:id="@+id/tv_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:id="@+id/v_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/black" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/message_from_box_shape"
+                        android:backgroundTint="@color/color_orange"
+                        android:gravity="center"
+                        android:padding="@dimen/_15sdp"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        app:fontName="Poppins-Medium.ttf" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

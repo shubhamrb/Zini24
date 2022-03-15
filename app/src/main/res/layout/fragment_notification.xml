@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="notificationView"
+            type="com.mamits.zini24user.viewmodel.fragment.NotificationFragmentViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragmentDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dim_white"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp">
+
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/img"
+                android:orientation="vertical">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/label_top_kiosk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Notifications"
+                    android:textColor="@color/color_orange"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <com.mamits.zini24user.ui.customviews.CustomTextView
+                    android:id="@+id/h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All updates and announcement from day 1."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/dash_path_img" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_top"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/notification_item" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recyclerView_notification"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_80sdp"
+                android:background="@drawable/rec_border_box"
+                android:backgroundTint="@color/color_orange"
+                android:gravity="center"
+                android:padding="@dimen/_15sdp"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:fontName="Poppins-Medium.ttf" />
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

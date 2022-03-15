@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:backgroundTint="@color/pink_fff7f2"
+    app:cardCornerRadius="@dimen/_30sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_20sdp"
+        android:gravity="center_vertical">
+
+        <com.mamits.zini24user.ui.customviews.CustomTextView
+            android:id="@+id/txt_cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Government jobs"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:fontName="Poppins-Medium.ttf" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_cat_name">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.mamits.zini24user.ui.customviews.CustomTextViewHtml
+                    android:id="@+id/txt_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:maxWidth="@dimen/_180sdp"
+                    android:maxLines="2"
+                    android:text="Apply for latest Government jobs vacancies from here."
+                    android:textColor="@color/black_2a2a2a"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:textSize="@dimen/_10ssp"/>
+
+                <LinearLayout
+                    android:id="@+id/btn_view_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_des"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View all"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/arrow_right"
+                        app:tint="@color/orange_ff9b44" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_sub_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/txt_des"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/subcategory_item_list" />
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
