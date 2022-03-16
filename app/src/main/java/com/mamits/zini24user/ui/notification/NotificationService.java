@@ -85,7 +85,7 @@ public class NotificationService extends FirebaseMessagingService {
             resultIntent.putExtra("type", type);
             resultIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_ONE_SHOT);
+            PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_IMMUTABLE);
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.drawable.zini24_logo)
