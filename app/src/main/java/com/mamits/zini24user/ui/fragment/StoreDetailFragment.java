@@ -109,7 +109,7 @@ public class StoreDetailFragment extends BaseFragment<FragmentStoreDetailBinding
 
             binding.btnShare.setOnClickListener(view1 -> {
                 if (store_id != -1) {
-                    var url = "https://zini24user.com/stores/" + store_id;
+                    var url = "https://zini24.com/stores/" + store_id;
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_TEXT, url);

@@ -23,11 +23,11 @@
         tools:node="merge">
 
         <activity
-            android:name="com.mamits.zini24user.ui.activity.WebViewActivity"
+            android:name=".ui.activity.WebViewActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.mamits.zini24user.ui.activity.CouponsActivity"
+            android:name=".ui.activity.CouponsActivity"
             android:exported="false" />
 
         <meta-data
@@ -37,7 +37,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity
-            android:name="com.mamits.zini24user.ui.activity.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateHidden|adjustResize">
@@ -53,27 +53,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mamits.zini24user.ui.activity.PaymentActivity"
+            android:name=".ui.activity.PaymentActivity"
             android:exported="true"/>
 
         <activity
-            android:name="com.mamits.zini24user.ui.activity.ResetPasswordActivity"
+            android:name=".ui.activity.ResetPasswordActivity"
             android:exported="true"/>
         <activity
-            android:name="com.mamits.zini24user.ui.activity.RegisterActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".ui.activity.RegisterActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="com.mamits.zini24user.ui.activity.ForgotPasswordActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".ui.activity.ForgotPasswordActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="com.mamits.zini24user.ui.activity.DashboardActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".ui.activity.DashboardActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="com.mamits.zini24user.ui.activity.OtpActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".ui.activity.OtpActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="com.mamits.zini24user.ui.activity.MessageActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".ui.activity.MessageActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -86,7 +86,7 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id"/>
         <service
-            android:name="com.mamits.zini24user.ui.notification.NotificationService"
+            android:name=".ui.notification.NotificationService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.mamits.zini24user.R;
-import com.mamits.zini24user.ui.activity.LoginActivity;
+import com.mamits.zini24user.ui.activity.DashboardActivity;
 
 public class NotificationService extends FirebaseMessagingService {
     private static final String TAG = "NotificationService";
@@ -67,8 +67,8 @@ public class NotificationService extends FirebaseMessagingService {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Log.e("log : ", "if");
-            CHANNEL_ID = "my_channel_01";
-            CharSequence name = "my_channel";
+            CHANNEL_ID = "my_channel_02";
+            CharSequence name = "my_channel02";
             String Description = "This is my channel";
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
@@ -81,14 +81,14 @@ public class NotificationService extends FirebaseMessagingService {
             notificationManager.createNotificationChannel(mChannel);
 
 
-            Intent resultIntent = new Intent(this, LoginActivity.class);
+            Intent resultIntent = new Intent(this, DashboardActivity.class);
             resultIntent.putExtra("type", type);
             resultIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
             PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_IMMUTABLE);
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.zini24_logo)
+                    .setSmallIcon(R.drawable.ic_notification)
                     .setColor(ContextCompat.getColor(this, R.color.color_orange))
                     .setContentTitle(title)
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationMsg))
@@ -98,7 +98,7 @@ public class NotificationService extends FirebaseMessagingService {
             notificationManager.notify(NOTIFICATION_ID, builder.build());
 
         } else {
-            Intent resultIntent = new Intent(this, LoginActivity.class);
+            Intent resultIntent = new Intent(this, DashboardActivity.class);
             resultIntent.putExtra("type", type);
             PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_ONE_SHOT);
             Notification n = new Notification.Builder(this)
@@ -107,7 +107,7 @@ public class NotificationService extends FirebaseMessagingService {
                     .setContentText(notificationMsg)
                     .setAutoCancel(true)
                     .setContentIntent(resultPendingIntent)
-                    .setSmallIcon(R.drawable.zini24_logo)
+                    .setSmallIcon(R.drawable.ic_notification)
                     .build();
             NotificationManager notificationManager1 = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager1.notify(NOTIFICATION_ID, n);
