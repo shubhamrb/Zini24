@@ -89,11 +89,11 @@ public class WebViewActivity extends BaseActivity<ActivityWebViewBinding, WebVie
             } else if (mType.equals("enquiry")){
                 callEnquiryWebView();
             }else if (mType.equals("privacy")){
-                loadUrl("https://zini24user.com/privacy-policy");
+                loadUrl("https://zini24.com/privacy-policy");
             }else if (mType.equals("tc")){
-                loadUrl("https://zini24user.com/terms-and-conditions");
+                loadUrl("https://zini24.com/terms-and-conditions");
             }else if (mType.equals("about")){
-                loadUrl("https://zini24user.com/aboutsus");
+                loadUrl("https://zini24.com/aboutsus");
             }
         }
     }

@@ -219,6 +219,15 @@ public class DataManager implements IDataManager {
     }
 
     @Override
+    public void setNotificationType(String type) {
+        mPreferenceHelper.setNotificationType(type);
+    }
+    @Override
+    public String getNotificationType() {
+        return mPreferenceHelper.getNotificationType();
+    }
+
+    @Override
     public String getAccessToken() {
         return mPreferenceHelper.getAccessToken();
     }
@@ -303,4 +312,7 @@ public class DataManager implements IDataManager {
     public void clearAllPreference() {
         mPreferenceHelper.clearAllPreference();
     }
+
+
+
 }

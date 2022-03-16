@@ -3,6 +3,7 @@ package com.mamits.zini24user.ui.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -73,7 +74,27 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeFragment
         }
         if (isRefresh) {
             mGson = new Gson();
+            String action = mViewModel.getmDataManger().getNotificationType();
+            mViewModel.getmDataManger().setNotificationType(null);
 
+            if (action != null && action.trim().length() != 0) {
+                final Handler handler = new Handler();
+                switch (action) {
+                    case "order":
+                        handler.postDelayed(() -> {
+                            Navigation.findNavController(((DashboardActivity) mContext)
+                                    .findViewById(R.id.nav_host_fragment)).navigate(R.id.nav_history);
+                        }, 1000);
+                        break;
+                    case "chat":
+                        handler.postDelayed(() -> {
+                        Navigation.findNavController(((DashboardActivity) mContext)
+                                .findViewById(R.id.nav_host_fragment)).navigate(R.id.nav_chat);
+                        }, 1000);
+                        break;
+
+                }
+            }
             DashboardActivity activity = ((DashboardActivity) mContext);
             if (activity != null) {
                 if (activity.isListenerNull()){

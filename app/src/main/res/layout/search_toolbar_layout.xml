@@ -33,6 +33,7 @@
                 android:background="@drawable/rectangle_search_box"
                 android:hint="Search for online service..."
                 android:paddingStart="@dimen/_10sdp"
+                android:textCursorDrawable="@null"
                 android:textColor="@color/black"
                 android:textColorHint="#707070"
                 android:textSize="@dimen/_13ssp" />

@@ -17,7 +17,7 @@ public class StoreDetailModel implements Serializable {
     String name;
 
     @SerializedName("ratting")
-    int ratting;
+    float ratting;
 
     @SerializedName("latitude")
     String latitude;
@@ -93,11 +93,11 @@ public class StoreDetailModel implements Serializable {
         this.name = name;
     }
 
-    public int getRatting() {
+    public float getRatting() {
         return ratting;
     }
 
-    public void setRatting(int ratting) {
+    public void setRatting(float ratting) {
         this.ratting = ratting;
     }
 

@@ -91,6 +91,13 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
         binding = getViewDataBinding();
         mViewModel = getMyViewModel();
         mViewModel.setNavigator(this);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle!=null) {
+            String type = bundle.getString("type");
+            mViewModel.getmDataManger().setNotificationType(type);
+        }
+        
         /*temp*/
         mViewModel.getmDataManger().setPaymentOpen(false);
 

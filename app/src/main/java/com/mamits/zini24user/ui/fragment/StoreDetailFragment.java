@@ -217,7 +217,7 @@ public class StoreDetailFragment extends BaseFragment<FragmentStoreDetailBinding
                 binding.imgStatus.setBackground(AppCompatResources.getDrawable(mContext, R.drawable.circle_green));
                 break;
         }
-        binding.txtRating.setText(String.format(Locale.getDefault(), "%d", storeDetail.getRatting()));
+        binding.txtRating.setText(String.format(Locale.getDefault(), "%.1f", storeDetail.getRatting()));
         binding.ratingbarRating.setRating(storeDetail.getRatting());
         binding.txtTotalRating.setText(String.format(Locale.getDefault(), "%d Ratings", storeDetail.getTotalrating()));
         setUpCategoryList(storeDetail.getCategory(), storeDetail.getId());

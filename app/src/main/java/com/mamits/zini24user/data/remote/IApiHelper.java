@@ -82,4 +82,5 @@ public interface IApiHelper {
     void sendOtp(Activity mActivity, String number, ResponseListener message);
 
     void updatePin(Activity mActivity, String number, String newPin, ResponseListener message);
+
 }
