@@ -81,19 +81,31 @@ public class WebViewActivity extends BaseActivity<ActivityWebViewBinding, WebVie
         mViewModel.setNavigator(this);
 
         permission();
+        WebSettings webSettings = binding.webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setAllowFileAccess(true);
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
 
+        webSettings.setMixedContentMode(0);
         if (getIntent().hasExtra("type")) {
             mType = getIntent().getStringExtra("type");
-            if (mType.equals("help")) {
-                callHelpSupportWebview();
-            } else if (mType.equals("enquiry")){
-                callEnquiryWebView();
-            }else if (mType.equals("privacy")){
-                loadUrl("https://zini24.com/privacy-policy");
-            }else if (mType.equals("tc")){
-                loadUrl("https://zini24.com/terms-and-conditions");
-            }else if (mType.equals("about")){
-                loadUrl("https://zini24.com/aboutsus");
+            switch (mType) {
+                case "help":
+                    callHelpSupportWebview();
+                    break;
+                case "enquiry":
+                    callEnquiryWebView();
+                    break;
+                case "privacy":
+                    binding.webview.loadUrl("https://zini24.com/privacy-policy");
+                    break;
+                case "tc":
+                    binding.webview.loadUrl("https://zini24.com/terms-and-conditions");
+                    break;
+                case "about":
+                    binding.webview.loadUrl("https://zini24.com/aboutsus");
+                    break;
             }
         }
     }
@@ -159,13 +171,7 @@ public class WebViewActivity extends BaseActivity<ActivityWebViewBinding, WebVie
     }
 
     private void loadUrl(String mLink) {
-        WebSettings webSettings = binding.webview.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setAllowFileAccess(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
 
-        webSettings.setMixedContentMode(0);
         binding.webview.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         binding.webview.setWebViewClient(new Callback());
 

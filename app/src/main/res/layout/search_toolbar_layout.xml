@@ -14,16 +14,24 @@
         android:layout_height="@dimen/_100sdp"
         android:background="@drawable/toobar_background"
         android:backgroundTint="@color/white"
-        android:visibility="gone"
-        android:elevation="@dimen/_5sdp">
+        android:elevation="@dimen/_5sdp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back_arrow_24" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_toStartOf="@id/btn_search"
+            android:layout_toEndOf="@id/btn_back"
             android:orientation="vertical">
 
             <com.mamits.zini24user.ui.customviews.CustomInputEditText
@@ -33,9 +41,9 @@
                 android:background="@drawable/rectangle_search_box"
                 android:hint="Search for online service..."
                 android:paddingStart="@dimen/_10sdp"
-                android:textCursorDrawable="@null"
                 android:textColor="@color/black"
                 android:textColorHint="#707070"
+                android:textCursorDrawable="@null"
                 android:textSize="@dimen/_13ssp" />
         </RelativeLayout>
 

@@ -100,10 +100,11 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginRight="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_80sdp"
-                android:background="@color/color_orange"
+                android:background="@drawable/message_from_box_shape"
+                android:backgroundTint="@color/color_orange"
                 android:gravity="center"
                 android:padding="@dimen/_15sdp"
-                android:text="Submit And Continue"
+                android:text="Submit &amp; Continue"
                 android:textColor="@color/white"
                 app:fontName="Poppins-Medium.ttf" />
         </RelativeLayout>

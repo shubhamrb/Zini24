@@ -5,15 +5,22 @@ import static android.app.Activity.RESULT_OK;
 import android.Manifest;
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +31,7 @@ import androidx.core.content.FileProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.bumptech.glide.Glide;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
@@ -87,6 +95,8 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
     private String mPictureType = "";
     private boolean isCheckedTnc = false;
     private FormDataModel formDataModel;
+    private ImageView success;
+    private Dialog dialog;
 
     @Override
     public FormFragmentViewModel getMyViewModel() {
@@ -154,33 +164,8 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
             case R.id.text_proceed:
                 String errormsg = isValidData();
                 if (errormsg.isEmpty()) {
-                    List<PlaceOderFormData> formData = new ArrayList<>();
 
-                    for (CustomFieldObject customFieldObj : customFormList) {
-                        formData.add(
-                                new PlaceOderFormData(
-                                        customFieldObj.getName(),
-                                        customFieldObj.getFieldType(),
-                                        customFieldObj.getIsRequired(),
-                                        customFieldObj.getAnsValue(),
-                                        customFieldObj.getExt()
-                                ));
-                    }
-
-                    String finalOrderPrice = "";
-                    if (formDataModel.getProduct_type() == 1) {
-                        finalOrderPrice = formDataModel.getSelectedPrice();
-                    } else {
-                        finalOrderPrice = formDataModel.getPrice();
-                    }
-                    PlaceOrderRequest placeOrderRequest = new PlaceOrderRequest(
-                            String.valueOf(store_id),
-                            formData,
-                            finalOrderPrice,
-                            String.valueOf(product_id),
-                            "form"
-                    );
-                    callPlaceOrder(placeOrderRequest);
+                    loader();
                 } else {
                     Toast.makeText(mContext, errormsg, Toast.LENGTH_SHORT).show();
                 }
@@ -190,6 +175,50 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
                 startActivity(browserIntent);
                 break;
         }
+    }
+
+    private void loader() {
+        dialog = new Dialog(mContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_success);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+        success = dialog.findViewById(R.id.success);
+        dialog.setCanceledOnTouchOutside(true);
+        Window window = dialog.getWindow();
+        window.setGravity(Gravity.CENTER);
+        dialog.show();
+
+        List<PlaceOderFormData> formData = new ArrayList<>();
+
+        for (CustomFieldObject customFieldObj : customFormList) {
+            formData.add(
+                    new PlaceOderFormData(
+                            customFieldObj.getName(),
+                            customFieldObj.getFieldType(),
+                            customFieldObj.getIsRequired(),
+                            customFieldObj.getAnsValue(),
+                            customFieldObj.getExt()
+                    ));
+        }
+
+        String finalOrderPrice = "";
+        if (formDataModel.getProduct_type() == 1) {
+            finalOrderPrice = formDataModel.getSelectedPrice();
+        } else {
+            finalOrderPrice = formDataModel.getPrice();
+        }
+        PlaceOrderRequest placeOrderRequest = new PlaceOrderRequest(
+                String.valueOf(store_id),
+                formData,
+                finalOrderPrice,
+                String.valueOf(product_id),
+                "form"
+        );
+        callPlaceOrder(placeOrderRequest);
+
+        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     @Override
@@ -490,8 +519,16 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
     public void onSuccessPlaceOrder(JsonObject jsonObject) {
         if (jsonObject.get("status").getAsBoolean()) {
             try {
-                Navigation.findNavController(((DashboardActivity) mContext).findViewById(R.id.nav_host_fragment)).navigate(R.id.nav_history);
-                Toast.makeText(mContext, jsonObject.get("message").getAsString(), Toast.LENGTH_SHORT).show();
+                success.setVisibility(View.VISIBLE);
+                Glide.with(mContext).asGif().load(R.drawable.success).into(success);
+                new Handler().postDelayed(() -> {
+                    if (dialog!=null && dialog.isShowing()){
+                        dialog.dismiss();
+                    }
+                    Navigation.findNavController(((DashboardActivity) mContext).findViewById(R.id.nav_host_fragment)).navigate(R.id.nav_history);
+//                    Toast.makeText(mContext, jsonObject.get("message").getAsString(), Toast.LENGTH_SHORT).show();
+                }, 2000);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -515,7 +552,7 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
                             CustomFieldObject object = customFormList.get(i);
                             if (visibilityControlFields.contains(object.getId())) {
                                 customFormList.get(i).setVisible(!obj.getHidefield().contains(object.getId()));
-                                if (obj.getHidefield().contains(object.getId())){
+                                if (obj.getHidefield().contains(object.getId())) {
                                     customFormList.get(i).setAnsValue("");
                                 }
                             }
@@ -535,7 +572,7 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
                             CustomFieldObject object = customFormList.get(i);
                             if (visibilityControlFields.contains(object.getId())) {
                                 customFormList.get(i).setVisible(!obj.getHidefield().contains(object.getId()));
-                                if (obj.getHidefield().contains(object.getId())){
+                                if (obj.getHidefield().contains(object.getId())) {
                                     customFormList.get(i).setAnsValue("");
                                 }
                             }
@@ -554,7 +591,7 @@ public class FormFragment extends BaseFragment<FragmentFormBinding, FormFragment
                         CustomFieldObject object = customFormList.get(i);
                         if (visibilityControlFields.contains(object.getId())) {
                             customFormList.get(i).setVisible(!obj.getHidefield().contains(object.getId()));
-                            if (obj.getHidefield().contains(object.getId())){
+                            if (obj.getHidefield().contains(object.getId())) {
                                 customFormList.get(i).setAnsValue("");
                             }
                         }

@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.basusingh.beautifulprogressdialog.BeautifulProgressDialog;
 import com.mamits.zini24user.ui.utils.commonClasses.CommonUtils;
 import com.mamits.zini24user.viewmodel.base.BaseViewModel;
 
@@ -26,7 +27,7 @@ public abstract class BaseFragment<T extends ViewDataBinding, V extends BaseView
     private View mRootView;
 
     private T mViewDataBinding;
-    private ProgressDialog mProgressDialog;
+    private BeautifulProgressDialog mProgressDialog;
     private boolean viewCreated = false;
 
     boolean hasInitializedRootView = false;
@@ -80,8 +81,8 @@ public abstract class BaseFragment<T extends ViewDataBinding, V extends BaseView
         return getPersistentView(inflater,container,savedInstanceState);
     }
     public void hidesLoading() {
-        if (mProgressDialog != null && mProgressDialog.isShowing()) {
-            mProgressDialog.cancel();
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
         }
     }
 
@@ -101,7 +102,7 @@ public abstract class BaseFragment<T extends ViewDataBinding, V extends BaseView
     }
     public void showsLoading() {
         hidesLoading();
-        mProgressDialog = CommonUtils.showLoadingDialog(mActivity);
+        mProgressDialog = CommonUtils.showProgressLoading(mActivity);
     }
 
     @Override

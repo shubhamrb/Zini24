@@ -34,6 +34,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
     private CustomTextView txt_resend;
     private Gson mGson;
     private String name, number, pass;
+    private boolean isCheckedTnc;
 
     @Override
     public int getBindingVariable() {
@@ -56,6 +57,10 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
 
         new ClickShrinkEffect(binding.btnLogin);
         new ClickShrinkEffect(binding.btnSignup);
+
+        binding.chkboxTnc.setOnCheckedChangeListener((compoundButton, b) -> {
+            isCheckedTnc = b;
+        });
     }
 
     @Override
@@ -140,7 +145,12 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
                     return;
                 }
 
-                doSignUp(name, number, pass);
+                if (isCheckedTnc) {
+                    doSignUp(name, number, pass);
+                } else {
+                    Toast.makeText(this, "Please agree on terms & conditions", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
     }

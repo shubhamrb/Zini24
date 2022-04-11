@@ -1,6 +1,7 @@
 package com.mamits.zini24user.ui.utils.commonClasses;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -8,6 +9,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaMetadataRetriever;
+import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.provider.Settings;
@@ -15,8 +17,10 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Patterns;
 
+import com.basusingh.beautifulprogressdialog.BeautifulProgressDialog;
 import com.mamits.zini24user.R;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -82,6 +86,17 @@ public class CommonUtils {
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
+        return progressDialog;
+    }
+    public static BeautifulProgressDialog showProgressLoading(Activity activity) {
+        BeautifulProgressDialog progressDialog = new BeautifulProgressDialog(activity,
+                BeautifulProgressDialog.withGIF,
+                null);
+        Uri myUri = Uri.fromFile(new File("//android_asset/gif/ziniloader.gif"));
+        progressDialog.setGifLocation(myUri);
+        progressDialog.setCancelable(false);
+        progressDialog.setCancelableOnTouchOutside(false);
+        progressDialog.show();
         return progressDialog;
     }
 

@@ -136,12 +136,29 @@
                     android:layout_height="@dimen/_1sdp"
                     android:background="@color/black" />
 
+                <LinearLayout
+                    android:id="@+id/ll_term"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <CheckBox
+                        android:id="@+id/chkbox_tnc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/orange_ff9b44" />
+
+                    <com.mamits.zini24user.ui.customviews.CustomTextViewHtml
+                        android:id="@+id/text_term"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/i_have_agree_terms_amp_conditions"
+                        android:textColor="@color/blue_006fff" />
+                </LinearLayout>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btn_signup"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_60sdp"
-                    android:layout_marginTop="@dimen/_30sdp"
                     android:backgroundTint="@color/black"
                     app:cardCornerRadius="@dimen/_10sdp">
 

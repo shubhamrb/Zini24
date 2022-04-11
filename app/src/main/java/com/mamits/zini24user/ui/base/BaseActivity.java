@@ -1,6 +1,7 @@
 package com.mamits.zini24user.ui.base;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -17,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.basusingh.beautifulprogressdialog.BeautifulProgressDialog;
 import com.mamits.zini24user.ui.utils.commonClasses.CommonUtils;
 import com.mamits.zini24user.ui.utils.commonClasses.NetworkUtils;
 import com.mamits.zini24user.viewmodel.base.BaseViewModel;
@@ -31,7 +33,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
     // TODO
     // this can probably depend on isLoading variable of BaseViewModel,
     // since its going to be common for all the activities
-    private ProgressDialog mProgressDialog;
+    private BeautifulProgressDialog mProgressDialog;
 
     private T mViewDataBinding;
 
@@ -98,7 +100,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     public void hideLoading() {
         try {
-            if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            if (mProgressDialog != null ) {
                 mProgressDialog.dismiss();
             }
         } catch (Exception e) {
@@ -120,7 +122,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     public void showLoading() {
         hideLoading();
-        mProgressDialog = CommonUtils.showLoadingDialog(this);
+        mProgressDialog = CommonUtils.showProgressLoading( this);
     }
 
 
@@ -137,7 +139,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
     @Override
     protected void onDestroy() {
         try {
-            if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            if (mProgressDialog != null ) {
                 mProgressDialog.dismiss();
             }
         } catch (Exception e) {

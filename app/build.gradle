@@ -10,12 +10,26 @@ android {
         applicationId "com.mamits.zini24user"
         minSdk 21
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.1"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('zini24.jks')
+            storePassword "123456"
+            keyAlias "key"
+            keyPassword "123456"
+        }
+        debug {
+            storeFile file('zini24.jks')
+            storePassword "123456"
+            keyAlias "key"
+            keyPassword "123456"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -135,6 +149,8 @@ dependencies {
 
     /*flex*/
     implementation 'com.google.android:flexbox:2.0.1'
+
+    implementation 'com.github.basusingh:BeautifulProgressDialog:1.001'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

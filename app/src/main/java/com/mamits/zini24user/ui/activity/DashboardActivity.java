@@ -130,6 +130,7 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
         binding.navDrawer.btnProfile.setOnClickListener(this);
         binding.navDrawer.btnHistory.setOnClickListener(this);
         binding.toolbar.btnSearch.setOnClickListener(this);
+        binding.searchToolbar.btnBack.setOnClickListener(this);
 
         new ClickShrinkEffect(binding.toolbar.btnMenu);
         new ClickShrinkEffect(binding.toolbar.llLocation);
@@ -328,6 +329,9 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
                     binding.toolbar.toolbar.setVisibility(View.GONE);
                     binding.searchToolbar.searchToolbar.setVisibility(View.VISIBLE);
                     binding.rvSearch.setVisibility(View.VISIBLE);
+                    break;
+                case R.id.btn_back:
+                    onBackPressed();
                     break;
             }
         } catch (Exception e) {

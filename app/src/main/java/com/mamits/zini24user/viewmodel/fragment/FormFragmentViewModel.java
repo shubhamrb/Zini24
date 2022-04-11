@@ -115,12 +115,12 @@ public class FormFragmentViewModel extends BaseViewModel<FormFragmentNavigator> 
 
     public void placeOrder(Activity mActivity, PlaceOrderRequest placeOrderRequest) {
         if (NetworkUtils.isNetworkConnected(mActivity)) {
-            getmNavigator().get().showProgressBars();
+//            getmNavigator().get().showProgressBars();
             getmDataManger().placeOrder(mActivity, getmDataManger().getAccessToken(), placeOrderRequest, new ResponseListener() {
                 @Override
                 public void onSuccess(JsonObject jsonObject) {
                     try {
-                        getmNavigator().get().hideProgressBars();
+//                        getmNavigator().get().hideProgressBars();
                         getmNavigator().get().onSuccessPlaceOrder(jsonObject);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -130,7 +130,7 @@ public class FormFragmentViewModel extends BaseViewModel<FormFragmentNavigator> 
                 @Override
                 public void onFailed(Throwable throwable) {
                     try {
-                        getmNavigator().get().hideProgressBars();
+//                        getmNavigator().get().hideProgressBars();
                         if (throwable instanceof ANError) {
                             ANError anError = (ANError) throwable;
                             if (anError.getErrorBody() != null) {
